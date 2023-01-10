@@ -1,0 +1,33 @@
+﻿@model ML.Medicamento
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Formulario</h1>
+
+<div class="container">
+    @using(@Html.BeginForm("Form", "Medicamento", FormMethod.Post)){
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-control visually-hidden">
+                    @Html.Label("ID Medicamento:")
+                    @Html.TextBoxFor(Model => Model.IdMedicamento)
+                </div>
+                <div class="form-control visually-hidden">
+                    @Html.Label("ID Medicamento:")
+                    @Html.TextBoxFor(Model => Model.IdMedicamento)
+                </div>
+                <div class="form-control visually-hidden">
+                    @Html.Label("ID Medicamento:")
+                    @Html.TextBoxFor(Model => Model.IdMedicamento)
+                </div>
+                <div class="form-control visually-hidden">
+                    @Html.Label("ID Medicamento:")
+                    @Html.TextBoxFor(Model => Model.IdMedicamento)
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

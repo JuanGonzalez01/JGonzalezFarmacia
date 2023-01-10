@@ -1,0 +1,57 @@
+﻿@model ML.Resultado
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Medicamentos</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            Bienvenido a la pestaaña Medicamentos. Si deseas añadir uno nuevo, presiona el botón verde "+".
+        </div>
+        <div class="col-md-6">
+            @Html.ActionLink("+","Form","Medicamento", new { @class="btn btn-primary" })
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>Nombre</th>
+                    <th>Descripción</td>
+                    <th>Fecha de caducidad</th>
+                    <th>Precio unitario</th>
+                    <th>Stock</th>
+                    <th>Proveedor</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (ML.Medicamento medicamento in Model.Objetos)
+                {
+                    <tr>
+                        <td>@Html.ActionLink("Editar","Form","Medicamento", new { @class="btn btn-primary", idMedicamento = medicamento.IdMedicamento })</td>
+                        <td>@medicamento.Nombre</td>
+                        <td>@medicamento.Descripcion</td>
+                        <td>@medicamento.FechaCaducidad</td>
+                        <td>@medicamento.PrecioUnitario</td>
+                        <td>@medicamento.Stock</td>
+                        <td>@medicamento.Proveedor.Nombre</td>
+                        <td>Eliminar</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
